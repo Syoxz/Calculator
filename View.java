@@ -2,6 +2,7 @@ package Taschenrechner;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ public class View extends JFrame {
 	private JPanel display;
 	private JPanel displayButton;
 	private JButton [] zahlenButton = new JButton [10];
-	private JButton zero,punkt,equals, plus, minus, mal,geteilt;
+	private JButton zero,punkt,equals,delete, plus, minus, mal,geteilt;
 	private JTextField displayField;
 	
 	public View () {
@@ -45,7 +46,7 @@ public class View extends JFrame {
 		getOp().setLayout(new GridLayout (4,1,0,0));
 		oButtons();
 		
-		getDisplayButton().setLayout(new GridLayout(1,1,0,0));
+		getDisplayButton().setLayout(new GridLayout(2,1,0,0));
 		equalButton();
 				
 		getContentPane().setLayout(new BorderLayout());
@@ -57,8 +58,18 @@ public class View extends JFrame {
 		setVisible(true);
 		}
 	
+	public JButton getDelete() {
+		return delete;
+	}
+
+	public void setDelete(JButton delete) {
+		this.delete = delete;
+	}
+
 	public void equalButton() {
 		equals = new JButton("=");
+		delete = new JButton("<-");
+		displayButton.add(delete);
 		displayButton.add(equals);
 	}
 	public void oButtons () {
@@ -104,7 +115,8 @@ public class View extends JFrame {
 		getGeteilt().addActionListener(al);
 		getPlus().addActionListener(al);
 		getMinus().addActionListener(al);
-			
+		getDelete().addActionListener(al);
+					
 	}
 	
 	public JPanel getDisplayButton() {

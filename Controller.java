@@ -13,6 +13,7 @@ public class Controller implements ActionListener {
 		setModel(new Model());
 		setView(new View());
 		getView().addActionListenerToButtons(this);
+		
 	}
 
 	
@@ -27,6 +28,9 @@ public class Controller implements ActionListener {
 				setOpCount(0);
 				setPunktCount(0);
 				setMinusCount(0);
+			}
+			else if (command == "<-") {
+				getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
 			}
 			else if (command.charAt(0) == '.' && getPunktCount() > 0);
 			
@@ -51,14 +55,6 @@ public class Controller implements ActionListener {
 					setOpCount(0);
 				}
 			}
-//		else if (command.charAt(0) == '.' && getModel().setzeWerte(getView().getDisplayField().getText())) {
-//			getView().getDisplayField().setText(getView().getDisplayField().getText() +'0' + command);
-//			setPunktCount(getPunktCount() +1);
-//		}
-//			else if (getModel().isErgVorhanden() && (command.charAt(0) == '+' |command.charAt(0) == '-' || command.charAt(0) == '*' ||command.charAt(0) == '/')) {
-//					getView().getDisplayField().setText("" + getModel().getErgebnis() + command);
-//					
-//			}
 			else if (command.charAt(0) == '-' ) {
 				if (getModel().isErgVorhanden()) {
 					getView().getDisplayField().setText("" + getModel().getErgebnis() + command);

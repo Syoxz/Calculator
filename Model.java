@@ -122,29 +122,16 @@ public class Model {
 		ergebnis = Math.round(ergebnis*10000.0)/10000.0;
 		return "" + ergebnis;
 	}
-//	public boolean wert2Gesetzt (String werte) {
-//	char [] arr = werte.toCharArray();
-//	String wert1 = "";
-//	String wert2 = "";
-//	String operator = "";
-//	for (int i = 0; i < arr.length; i++) {
-//		if (arr[i] >= '0' && arr[i] <='9' || arr[i] == '.') {
-//			if (operator.isEmpty()) {
-//				wert1 += arr[i];
-//			}
-//			else {
-//				wert2 += arr[i];
-//			}
-//		}
-//		if ((arr[i] == '+' || arr[i] == '-' || arr[i] == '/' || arr[i] == '*') && (!wert1.isEmpty() && wert2.isEmpty())){
-//			operator = "" + arr [i];
-//		}
-//	}
-//	if (!wert2.isEmpty()) {
-//		return true;
-//	}
-//	return false;
-//}
+	public String deleteLastInput(String werte) {
+		char [] arr = werte.toCharArray();
+ 		String neueWerte = "";
+ 		
+ 		for (int i = 0; i < arr.length -1; i++) {
+ 			neueWerte += arr[i];
+ 		}
+ 		
+		return neueWerte;
+	}
 
 	public double getErgebnis() {
 		return ergebnis;
