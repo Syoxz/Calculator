@@ -33,6 +33,9 @@ public class Controller implements ActionListener {
 				if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
 					setPunktCount(0);
 			}
+				else if (getView().getDisplayField().getText().equals("Ungueltige Eingabe!")) {
+					getView().resetFeld();
+				}
 				else if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
 					setOpCount(0);
 			}
