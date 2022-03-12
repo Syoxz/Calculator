@@ -2,7 +2,7 @@
 
 ---
 
-![CalculatorScreen](https://user-images.githubusercontent.com/88452877/147840923-fd0354ec-627d-469b-87ee-3d61d154100e.png) <br/>
+![2022-03-10 12_38_47-Taschenrechner](https://user-images.githubusercontent.com/88452877/157654500-9358cfcd-ea05-45ca-9e06-b8137f8bf5b4.png) <br/>
 
 
 It's one of my first bigger Java Projects, it can handle negative and decimal numbers. <br/>
