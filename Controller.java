@@ -30,7 +30,14 @@ public class Controller implements ActionListener {
 				setMinusCount(0);
 			}
 			else if (command == "<-") {
+				if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
+					setPunktCount(0);
+			}
+				else if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
+					setOpCount(0);
+			}
 				getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
+				
 			}
 			else if (command.charAt(0) == '.' && getPunktCount() > 0);
 			
@@ -40,7 +47,7 @@ public class Controller implements ActionListener {
 					getView().getDisplayField().setText('0' + command);
 					getModel().setErgVorhanden(false);
 				}
-				else if (getModel().setzeWerte(getView().getDisplayField().getText()) == 't'){
+				else if (getModel().checkWerte(getView().getDisplayField().getText()) == true){
 					getView().getDisplayField().setText(getView().getDisplayField().getText() +'0' + command);
 				}
 				else {
@@ -62,7 +69,7 @@ public class Controller implements ActionListener {
 					setPunktCount(0);
 					getModel().setErgVorhanden(false);
 				}
-				else if (getModel().setzeWerte(getView().getDisplayField().getText()) == 'a');
+				else if (getModel().isWert2Empty(getView().getDisplayField().getText()) == true);
 				else if (getMinusCount() == 0) {
 					getView().getDisplayField().setText(getView().getDisplayField().getText () + command);
 					setMinusCount(getMinusCount()+1);
@@ -77,7 +84,7 @@ public class Controller implements ActionListener {
 					setOpCount(getOpCount()+1);
 					getModel().setErgVorhanden(false);
 				}
-				else if (getModel().setzeWerte(getView().getDisplayField().getText()) == 'a' || getModel().isOperatorMinus(getView().getDisplayField().getText()));
+				else if (getModel().isWert2Empty(getView().getDisplayField().getText()) == true || getModel().isOperatorMinus(getView().getDisplayField().getText()));
 				else if (getOpCount() == 0 ) {
 					getView().getDisplayField().setText(getView().getDisplayField().getText() + command);
 					setOpCount(getOpCount()+1);
@@ -96,6 +103,7 @@ public class Controller implements ActionListener {
 			}
 		} catch (Exception x) {
 			getView().getDisplayField().setText("Ungueltige Eingabe!");
+			setPunktCount(0);
 			getModel().setErgebnis(0);
 			getModel().setErgVorhanden(true);
 		}
