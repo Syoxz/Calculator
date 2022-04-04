@@ -26,7 +26,7 @@ public class View extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
-		setTitle("Taschenrechner");
+		setTitle("Calculator");
 		setBounds(0,0, 350,300);
 		setZahlenPanel(new JPanel());
 		setDisplay(new JPanel());
