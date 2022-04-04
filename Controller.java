@@ -75,10 +75,14 @@ public class Controller implements ActionListener {
 			else if (command.charAt(0) == '-' ) {
 				if (getModel().isErgVorhanden()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
 =======
 					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
 >>>>>>> develop
+=======
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
+>>>>>>> fdca07458f4fcb368c6c8c3acb93e514d024d6b5
 					setMinusCount(getMinusCount()+1);
 					setPunktCount(0);
 					getModel().setErgVorhanden(false);
@@ -95,10 +99,14 @@ public class Controller implements ActionListener {
 			else if ((command.charAt(0) == '+'  || command.charAt(0) == '*' ||command.charAt(0) == '/')) {
 				if (getModel().isErgVorhanden()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
 =======
 					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
 >>>>>>> develop
+=======
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
+>>>>>>> fdca07458f4fcb368c6c8c3acb93e514d024d6b5
 					setOpCount(getOpCount()+1);
 					getModel().setErgVorhanden(false);
 				}
