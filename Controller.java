@@ -72,7 +72,7 @@ public class Controller implements ActionListener {
 					setPunktCount(0);
 					getModel().setErgVorhanden(false);
 				}
-				else if (getModel().isWert2Empty(getView().getDisplayField().getText()) == true);
+				else if (getModel().isWert2NotEmpty(getView().getDisplayField().getText()));
 				else if (getMinusCount() == 0) {
 					getView().getDisplayField().setText(getView().getDisplayField().getText () + command);
 					setMinusCount(getMinusCount()+1);
@@ -87,7 +87,7 @@ public class Controller implements ActionListener {
 					setOpCount(getOpCount()+1);
 					getModel().setErgVorhanden(false);
 				}
-				else if (getModel().isWert2Empty(getView().getDisplayField().getText()) == true || getModel().isOperatorMinus(getView().getDisplayField().getText()));
+				else if (getModel().isWert2NotEmpty(getView().getDisplayField().getText()) || getModel().isOperatorMinus(getView().getDisplayField().getText()));
 				else if (getOpCount() == 0 ) {
 					getView().getDisplayField().setText(getView().getDisplayField().getText() + command);
 					setOpCount(getOpCount()+1);

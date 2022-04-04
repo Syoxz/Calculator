@@ -64,7 +64,7 @@ public class Model {
 		}
 		return false;
 	}	
-	public boolean isWert2Empty (String werte) {
+	public boolean isWert2NotEmpty (String werte) {
 		Model m = new Model (werte);
 		if (!m.wert2.isEmpty()) {
 			return true;
