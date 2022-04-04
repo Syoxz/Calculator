@@ -23,7 +23,7 @@ I will work on it  in the near future and implement new things.
 ---
 # Known Bugs
 
-* -
+-
 
 
 
