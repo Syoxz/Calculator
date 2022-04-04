@@ -67,7 +67,7 @@ public class Controller implements ActionListener {
 			}
 			else if (command.charAt(0) == '-' ) {
 				if (getModel().isErgVorhanden()) {
-					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
 					setMinusCount(getMinusCount()+1);
 					setPunktCount(0);
 					getModel().setErgVorhanden(false);
@@ -83,7 +83,7 @@ public class Controller implements ActionListener {
 	//		Kommentar: Beschraenkt Eingabe zwar auf einen Operator, aber man kann diesen auch nicht aendern, falls vertippt.
 			else if ((command.charAt(0) == '+'  || command.charAt(0) == '*' ||command.charAt(0) == '/')) {
 				if (getModel().isErgVorhanden()) {
-					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
 					setOpCount(getOpCount()+1);
 					getModel().setErgVorhanden(false);
 				}
