@@ -23,7 +23,7 @@ I will work on it  in the near future and implement new things.
 ---
 # Known Bugs
 
-* Deleting the last number can cause some problems if you already calculated a result
+* -
 
 
 
