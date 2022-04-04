@@ -21,13 +21,7 @@ I will work on it  in the near future and implement new things.
 
 
 ---
-# Known Bugs
 
--
-
-
-
----
 # Future Implements
 
 * More than 2 values <br/>
