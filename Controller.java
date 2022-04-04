@@ -30,18 +30,25 @@ public class Controller implements ActionListener {
 				setMinusCount(0);
 			}
 			else if (command == "<-") {
-				if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
-					setPunktCount(0);
-			}
-				else if (getView().getDisplayField().getText().equals("Ungueltige Eingabe!")) {
-					getView().resetFeld();
+				if (getModel().isErgVorhanden()) {
 				}
-				else if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
-					setOpCount(0);
+				else  {
+					if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
+						setPunktCount(0);
+				}
+					if (getView().getDisplayField().getText().equals("Ungueltige Eingabe!")) {
+						getView().resetFeld();
+					}
+					if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
+						setOpCount(0);
+						}
+					getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
+				}
+			
 			}
-				getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
 				
-			}
+				
+			
 			else if (command.charAt(0) == '.' && getPunktCount() > 0);
 			
 			else if (command.charAt(0) == '.') {
