@@ -1,9 +1,15 @@
 package Taschenrechner;
 
-
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class Model {
+	DecimalFormat df = new DecimalFormat("###.#########",
+		new DecimalFormatSymbols(Locale.ENGLISH));
 	private double ergebnis = 0;
+	
+	String fErgebnis = "";
 	String wert1 = "";
 	String wert2 = "";
 	String operator = "";
@@ -86,13 +92,15 @@ public class Model {
 				return "Durch 0 Teilen ist nicht moeglich!";
 			} 
 			ergebnis = (Double.parseDouble(x.wert1) / Double.parseDouble(x.wert2));
+		
 		}
 		else {
 			ergebnis = (Double.parseDouble(x.wert1) * Double.parseDouble(x.wert2));
 		}
-		setErgVorhanden(true);
-		ergebnis = Math.round(ergebnis*10000.0)/10000.0;
-		return "" + ergebnis;
+		
+		setErgVorhanden(true); 
+		fErgebnis =  df.format(ergebnis);
+		return "" + fErgebnis;
 	}
 	public String deleteLastInput(String werte) {
 		char [] arr = werte.toCharArray();
