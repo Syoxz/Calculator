@@ -30,18 +30,25 @@ public class Controller implements ActionListener {
 				setMinusCount(0);
 			}
 			else if (command == "<-") {
-				if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
-					setPunktCount(0);
-			}
-				else if (getView().getDisplayField().getText().equals("Ungueltige Eingabe!")) {
-					getView().resetFeld();
+				if (getModel().isErgVorhanden()) {
 				}
-				else if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
-					setOpCount(0);
+				else  {
+					if (getModel().checkLastInput(getView().getDisplayField().getText()) == "punkt") {
+						setPunktCount(0);
+				}
+					if (getView().getDisplayField().getText().equals("Ungueltige Eingabe!")) {
+						getView().resetFeld();
+					}
+					if (getModel().checkLastInput(getView().getDisplayField().getText()) == "operator") {
+						setOpCount(0);
+						}
+					getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
+				}
+			
 			}
-				getView().getDisplayField().setText(getModel().deleteLastInput(getView().getDisplayField().getText()));
 				
-			}
+				
+			
 			else if (command.charAt(0) == '.' && getPunktCount() > 0);
 			
 			else if (command.charAt(0) == '.') {
@@ -67,7 +74,11 @@ public class Controller implements ActionListener {
 			}
 			else if (command.charAt(0) == '-' ) {
 				if (getModel().isErgVorhanden()) {
+<<<<<<< HEAD
 					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
+=======
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
+>>>>>>> develop
 					setMinusCount(getMinusCount()+1);
 					setPunktCount(0);
 					getModel().setErgVorhanden(false);
@@ -83,7 +94,11 @@ public class Controller implements ActionListener {
 	//		Kommentar: Beschraenkt Eingabe zwar auf einen Operator, aber man kann diesen auch nicht aendern, falls vertippt.
 			else if ((command.charAt(0) == '+'  || command.charAt(0) == '*' ||command.charAt(0) == '/')) {
 				if (getModel().isErgVorhanden()) {
+<<<<<<< HEAD
 					getView().getDisplayField().setText("" + getModel().fErgebnis + command);
+=======
+					getView().getDisplayField().setText("" + getView().getDisplayField().getText() + command);
+>>>>>>> develop
 					setOpCount(getOpCount()+1);
 					getModel().setErgVorhanden(false);
 				}
