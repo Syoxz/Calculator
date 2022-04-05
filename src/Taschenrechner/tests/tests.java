@@ -1,8 +1,11 @@
-package Taschenrechner;
+package Taschenrechner.tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import Taschenrechner.Controller;
+import Taschenrechner.View;
 
 public class tests {
 	Controller c = new Controller();

@@ -39,4 +39,3 @@ I will work on it  in the near future and implement new things.
 
 * More than 2 values <br/>
 * Keyboard Control
-
