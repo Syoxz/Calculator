@@ -108,6 +108,11 @@ local.properties
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+/target/
+/.classpath
+/*.project
+/.settings
+/*.springBeans
 
 # Gradle
 .idea/**/gradle.xml
